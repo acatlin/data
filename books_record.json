@@ -1,0 +1,25 @@
+{
+  "books": [
+    {
+      "title": "Peak: Secrets from the New Science of Expertise",
+      "authors": ["Anders Ericsson", "Robert Pool"],
+      "publisher": "Eamon Dolan/Houghton Mifflin Harcourt",
+      "publication_year": 2016,
+      "isbn": "978-0544456235"
+    },
+    {
+      "title": "The Talent Code: Greatness Isn't Born. It's Grown. Here's How.",
+      "authors": ["Daniel Coyle"],
+      "publisher": "Bantam",
+      "publication_year": 2009,
+      "isbn": "978-0553806847"
+    },
+    {
+      "title": "Mastery",
+      "authors": ["Robert Greene"],
+      "publisher": "Penguin Books",
+      "publication_year": 2013,
+      "isbn": "978-0143124177"
+    }
+  ]
+}
