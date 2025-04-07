@@ -1,0 +1,54 @@
+---
+title: "frankenstein download"
+author: "Claude and Andy"
+format: html
+editor: visual
+---
+
+## Getting Frankenstein from Guttenberg
+
+I asked Claude for help with code, but it gave me a mirror message. I found code on-line to fix here: <https://forum.posit.co/t/cant-download-books-from-gutenbergr/93961/2>
+
+```{r}
+# Install required packages if not already installed
+if (!require(gutenbergr)) {
+  install.packages("gutenbergr")
+}
+if (!require(dplyr)) {
+  install.packages("dplyr")
+}
+if (!require(tidytext)) {
+  install.packages("tidytext")
+}
+
+# Load libraries
+library(gutenbergr)
+library(dplyr)
+library(tidytext)
+
+# Mary Shelley's Frankenstein is book ID 84 in Project Gutenberg
+frankenstein_id <- 84
+
+# Download the full text of Frankenstein
+frankenstein_text <- gutenberg_download(frankenstein_id, mirror = "http://mirror.csclub.uwaterloo.ca/gutenberg/")
+
+# View the structure of the dataframe
+str(frankenstein_text)
+
+# Display the first few rows of the dataframe
+head(frankenstein_text)
+
+# Get basic information about the text
+cat("Total lines in Frankenstein:", nrow(frankenstein_text), "\n")
+
+# Optional: Convert to a tidier format with one word per row
+frankenstein_words <- frankenstein_text %>%
+  unnest_tokens(word, text)
+
+# View the word structure
+head(frankenstein_words)
+
+# Count of unique words
+unique_words <- length(unique(frankenstein_words$word))
+cat("Number of unique words in Frankenstein:", unique_words, "\n")
+```
